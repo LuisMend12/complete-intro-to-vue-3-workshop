@@ -7,16 +7,22 @@
     <title>Playground — Complete Intro to Vue 3</title>
   </head>
   <body>
-    <h1>Yo this is vue</h1>
+    
+    <h1>Counter</h1>
+    <p>{{ count }}</p>
+    <button>Increment count</button>
+    <hr />
+    <h1>Yo this i</h1>
     <div id="app">
       <p v-if="message.length % 2 === 0">Even: 
-        {{ message }} </p>
+        {{ message.toUpperCase() }} </p>
       <p v-else>Odd: {{ message }} </p>  
-      <ul>
-        <li v-for="number in listOfNumbers">
+      <ul  v-for="number in listOfNumbers">
+        <li>
           {{ number * Math.random() }}
         </li>
       </ul>
+      
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
@@ -28,6 +34,7 @@
         // } the dat becomes stale and we get catching issues
         data() { //for vue.js, data has to be a function that returns an object
           return {
+            count: 10,
             message: 'Hello it works',
             listOfNumbers:[{name:1, id}]
           }
