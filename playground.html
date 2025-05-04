@@ -12,9 +12,11 @@
       <h1>Counter</h1>
       <p>{{ count }}</p>
       <button v-on:Click="incrementCount">Increment Count</button>
+      <h1>{{ incrementAmount }}</h1>
       <div>
         <label for="incrementAmount">Increment by:</label>
-        <input type="number" v-bind:value="incrementAmount" />
+        <input type="number" 
+        v-model="incrementAmount"/>
       </div>
       <hr />
       <p v-if="message.length === 0">Even: {{ message.toUpperCase() }}</p>
